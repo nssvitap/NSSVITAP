@@ -1,2 +1,2 @@
 # NSSVITAP
-Website for NSS VITAP
+The Official Website for NSS VITAP Club
