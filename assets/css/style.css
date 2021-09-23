@@ -668,6 +668,7 @@ section {
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
+  height: 250px;
 }
 
 .services .icon-box::before {
@@ -710,8 +711,8 @@ section {
 }
 
 .services .description {
-  font-size: 15px;
-  line-height: 28px;
+  font-size: 13px;
+  line-height: 15px;
   margin-bottom: 0;
 }
 
