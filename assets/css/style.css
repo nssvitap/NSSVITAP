@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #67b0d1;
+  color: #50a1cf;
 }
 
 .navbar .dropdown:hover > ul {
@@ -663,8 +663,9 @@ section {
   padding: 30px;
   position: relative;
   overflow: hidden;
+  border: 0 groove;
   background: #fff;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  box-shadow: 0 0 30px #049ee6;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -717,6 +718,7 @@ section {
 
 .services .icon-box:hover .title a, .services .icon-box:hover .description {
   color: #fff;
+  
 }
 
 .services .icon-box:hover .icon i {
@@ -1237,6 +1239,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.map{
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+
+}
 .contact {
   padding-bottom: 80px;
 }
@@ -1273,7 +1279,7 @@ section {
 }
 
 .contact .php-email-form {
-  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  box-shadow: 0 0 30px rgba(219, 195, 55, 0.6);
   padding: 30px;
   background: #fff;
 }
@@ -1321,33 +1327,43 @@ section {
 }
 
 .contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 5px;
+  border: 0;
+  border: groove 0;
   font-size: 14px;
 }
 
 .contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
   background-color: #67b0d1;
+
 }
 
 .contact .php-email-form input {
   padding: 10px 15px;
+  border: 0;
+  box-shadow: 0 0 10px #049ee6;
+
 }
 
 .contact .php-email-form textarea {
   padding: 12px 15px;
+  box-shadow: 0 0 10px #049ee6;
+  border: 0;
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #67b0d1;
+  background: #399cca;
   border: 0;
   padding: 10px 24px;
+  border-radius: 20px;
   color: #fff;
   transition: 0.4s;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #8ec4dd;
+  background: #00aeff;
+  box-shadow: 0 0 30px rgba(0, 117, 196, 0.6);
+  color: #ffffff;
 }
 /* Conatct form Response Style*/
 #status{
