@@ -319,6 +319,82 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.cd-intro-content h1,
+.cd-intro-content h2,
+.cd-intro-content .cd-btn {
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.bouncy.cd-intro-content h1{
+  animation-name: cd-bounce-right;
+}
+
+.bouncy.cd-intro-content h2 {
+  animation-name: cd-bounce-left;
+}
+
+.bouncy.cd-intro-content h1,
+.bouncy.cd-intro-content h2 {
+  animation-duration: 0.6s;
+}
+
+.bouncy.cd-intro-content .cd-btn {
+  animation-name: cd-bounce-rotate;
+  animation-duration: 0.5s;
+}
+
+.bouncy.cd-intro-content .cd-btn.main-action {
+  animation-delay: 0.4s;
+}
+
+@keyframes cd-bounce-right {
+  0% {
+    opacity: .2;
+    transform: translateX(-200px);
+  }
+  60% {
+    opacity: .7;
+    transform: translateX(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cd-bounce-left {
+  0% {
+    opacity: .2;
+    transform: translateX(200px);
+  }
+  60% {
+    opacity: .7;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cd-bounce-rotate {
+  0% {
+    opacity: .2;
+    transform: perspective(800px) rotateX(-80deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  60% {
+    transform: perspective(800px) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0);
+  }
+}
 #hero {
   width: 100%;
   height: 100vh;
@@ -378,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 8px;
   background: rgba(255, 255, 255, 0.15);
 }
-
+/*
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
@@ -396,6 +472,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
 }
+*/
 
 /*--------------------------------------------------------------
 # Sections General
@@ -1272,22 +1349,35 @@ section {
 .contact .php-email-form button[type="submit"]:hover {
   background: #8ec4dd;
 }
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Conatct form Response Style*/
+#status{
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px;
 }
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
+#status.success{
+  background-color: rgb(6, 179, 92);
+  color: white;
+  animation: status 4s ease  forwards;
+}
+#status.error{
+  background-color: rgb(214, 3, 3);
+  color: white;
+  animation: status 4s ease forwards;
+}
+@keyframes status{
+  0%{
+    opacity: 1;
+    pointer-events: all;
   }
-  100% {
-    transform: rotate(360deg);
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -1346,11 +1436,25 @@ section {
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a:hover {
-  background: #67b0d1;
+#footer .footer-top .social-links a.instagram:hover {
+background: #f09433; 
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+color: #fff;
+text-decoration: none;
+}
+#footer .footer-top .social-links a.facebook:hover {
+  background-color: #4267B2;
   color: #fff;
   text-decoration: none;
-}
+  }
+  #footer .footer-top .social-links a.linkedin:hover {
+    background-color: #0077b5		;
+    color: #fff;
+    text-decoration: none;
+    }
 
 #footer .footer-top h4 {
   font-size: 16px;
