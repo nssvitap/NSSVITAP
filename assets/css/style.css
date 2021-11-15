@@ -2,7 +2,6 @@ body {
   font-family: "Open Sans", sans-serif;
   color: black;
 }
-
 a {
   text-decoration: none;
   color: #67b0d1;
@@ -398,7 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("af8bc9fe-2189-46fb-9414-3de06ae4a1ad.jpg") top center;
+  background:linear-gradient(rgb(61, 172, 206),#ffffff) top center;
   background-size: cover;
   position: relative;
   margin-bottom: -90px;
@@ -480,7 +479,6 @@ h1, h2, h3, h4, h5, h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
-  background-image: url(../img/hero-bg.jpg);
   background-size: cover;
   width: 100%;
   background-repeat: no-repeat;
@@ -511,7 +509,6 @@ section {
   background: url() no-repeat;
   z-index: -1;
 }
-
 .section-title p {
   margin-bottom: 0;
 }
@@ -566,7 +563,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("af8bc9fe-2189-46fb-9414-3de06ae4a1ad.jpg") center center ;
+  background: linear-gradient(#ffffff, rgb(61, 172, 206));
   background-size: cover;
   padding: 60px 0;
   position: relative;
@@ -595,7 +592,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 34px;
-  color: #00b3ff;
+  color: #070707;
   margin-bottom: 30px;
 }
 
@@ -606,7 +603,7 @@ section {
 
 .about .content .about-btn {
   display: inline-block;
-  background: #67b0d1;
+  background: #1e92c9;
   padding: 6px 44px 8px 30px;
   color: rgb(255, 255, 255);
   border-radius: 50px;
@@ -622,7 +619,8 @@ section {
 }
 
 .about .content .about-btn:hover {
-  background: #7bbad7;
+  background: #f8f8f8;
+  color: black;
 }
 
 .about .icon-boxes .icon-box {
@@ -643,7 +641,7 @@ section {
 
 .about .icon-boxes .icon-box p {
   font-size: 15px;
-  color: hsl(0, 100%, 50%);
+  color: hsl(0, 0%, 1%);
 }
 
 @media (max-width: 1200px) {
@@ -661,13 +659,16 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.services{
+  background: linear-gradient(rgb(61, 172, 206),#ffffff);
+}
 .services .icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
   border: 0 groove;
   background: #fff;
-  box-shadow: 0 0 30px #049ee6;
+  box-shadow: 0 0 10px #219cd4;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -686,7 +687,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #67b0d1;
+  background: #05a0e7;
   top: 0;
   border-radius: 0px;
 }
@@ -698,7 +699,7 @@ section {
 .services .icon i {
   font-size: 48px;
   line-height: 1;
-  color: #67b0d1;
+  color: #1983b4;
   transition: all 0.3s ease-in-out;
 }
 
@@ -730,6 +731,9 @@ section {
 /*-----------------------------------------------------------------------------------------------------------------------------------------
    #Events
 -----------------------------------------------------------------------------------------------------------------------------------------*/
+.events{
+  background: linear-gradient(white,rgb(61, 172, 206));
+}
 * {
   box-sizing: border-box;
 }
@@ -822,6 +826,7 @@ section {
 --------------------------------------------------------------*/
 .counts {
   padding-bottom: 30px;
+  background: linear-gradient(rgb(61, 172, 206), white);
 }
 
 .counts .count-box {
@@ -851,7 +856,7 @@ section {
   margin: 0 0 0 60px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 .counts .count-box a {
@@ -867,6 +872,7 @@ section {
 .counts .count-box a:hover {
   color: #6e9fb4;
 }
+
 
 /*--------------------------------------------------------------
 # Cta
@@ -1160,6 +1166,9 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.team{
+  background: linear-gradient(white, rgb(61, 172, 206));
+}
 .team .member {
   text-align: center;
   margin-bottom: 80px;
@@ -1247,6 +1256,7 @@ section {
 }
 .contact {
   padding-bottom: 80px;
+  background: linear-gradient(rgb(61, 172, 206),#ffffff);
 }
 
 .contact .info-box {
@@ -1403,7 +1413,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background-image: url(../img/images.jpg);
+  background: rgb(88, 174, 207);
   background-size: cover;
   padding: 0 0 30px 0;
   color: #fff;
