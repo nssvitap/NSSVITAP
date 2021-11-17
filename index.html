@@ -27,7 +27,16 @@
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/4f7bdeb19111b44dfba5dd4fb/a98a96304c9d0afe9d42ce6f6.js");</script>
 </head>
 
-<body>
+<body onload="myFunction()" style="margin:0;">
+
+  <!-- ================ Page Loader ==================== -->
+  <div id="loader">
+    <img src="nss logo.ico">
+    <div class="progress-bar" style="--width: 10" data-label="Loading..."></div>
+  </div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <!-- ============== END ============= -->
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
@@ -655,6 +664,19 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</div>
+  <script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 3000);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
 <script>
   var slideIndex = 1;
 showSlides(slideIndex);
