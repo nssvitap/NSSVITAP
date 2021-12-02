@@ -1,6 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: black;
+  place-content: start center;
 }
 /* Center the loader */
 #loader {
@@ -797,87 +798,95 @@ section {
   box-sizing: border-box;
 }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
+.w {
+  width:40rem;
+  height:40rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.ts {
+  width:100%; height:100%;
+  position:relative;
+  --barH:10%;/*active zone height = 100% - barH*/
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
+.t {
+  --w:20%;
+  display:block; width:var(--w); height:var(--barH);
+  position:absolute; bottom:0; left:var(--l);
+  transform-origin:top left;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+.t img {
+  display:block; width:100%; height:100%;
+  object-fit:cover;
+  transform:scale(0.8);
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+[type="radio"] { 
+  display:none; 
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+:checked + label.t {
+  left:0; bottom:var(--barH);
+  height:calc(100% - var(--barH));
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+:checked + label.t img {
+  object-fit:contain;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
+/* 
+optional
+*/
+
+.ts {/*thumbnails bar*/
+  perspective:100px;
+  perspective-origin:center center;
+  transform-style:preserve-3d;
+  pointer-events:none;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.ts:after {/*the plate*/
+  content:"";
+  display:block; width:100%; height:15px;
+  position:absolute; bottom:0;
+  background:linear-gradient(transparent 20%, rgba(0,0,0,0.1));
+  transform:rotateX(90deg)scaleX(1.2);
+  transform-origin:bottom center;
 }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
+:not(:checked) + .t {/*inactive labels*/
+  transform:translate3d(0, 0, -5px);
+  pointer-events:auto;
 }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
+:not(:checked) + .t:hover {
+  transform:translate3d(0, -7px, -5px);
+  box-shadow:0 30px 30px -25px rgba(0,0,0,0.3);
+  cursor:pointer;
 }
 
-.active,
-.demo:hover {
-  opacity: 1;
+:not(:checked) + .t img {
+  transform:scale(0.9);/*create gaps*/
+}
+
+:checked + .t {/*active label*/
+  box-shadow:0 0 0 transparent;
+  animation:anim 2s 1;
+} @keyframes anim {
+  from { transform:rotateY(6deg)rotateX(3deg) }
+}
+
+/* 
+transitions
+*/
+.t {/*active->inactive & hover->rest*/
+  transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s;
+}
+.t:hover, :checked + .t {
+  transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
 }
 
 /*--------------------------------------------------------------
@@ -886,6 +895,7 @@ section {
 .counts {
   padding-bottom: 30px;
   background: linear-gradient(rgb(61, 172, 206), white);
+  margin-top: 5rem;
 }
 
 .counts .count-box {
@@ -1135,7 +1145,89 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
+article {
+  position: absolute;
+  left: 38%;
+  width: 50vw;
+  color: #333;
+}
+article h1{
+  margin: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+article p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-family: cursive;
+  font-style: italic;
+}
+.g {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-rows: 10vh;
+  place-content: start center;
+  z-index: 1;
+  transition: all 1s;
+  position: relative;
+}
+.g:hover {
+  background: linear-gradient(transparent, hsla(0, 0%, 100%, 0.5), transparent);
+  height: 95vh;
+  width: 50%;
+  left: 20%;
+}
+.g a {
+  font: 0.8em monospace;
+  position: static;
+  display: block;
+  width: 5ch;
+  height: 5ch;
+  display: grid;
+  place-content: center;
+  background: hsla(0, 0%, 100%, 0.5);
+  color: #333;
+  text-decoration: none;
+  border-bottom: thin solid red;
+  box-sizing: border-box;
+}
+.g a:hover {
+  background: hsla(0, 0%, 0%, 0.5);
+  color: #eee;
+  border-bottom: 0 none;
+}
+.g a img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 85vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%);
+  transition: -webkit-clip-path 0.3s ease-in;
+  transition: clip-path 0.3s ease-in;
+  transition: clip-path 0.3s ease-in, -webkit-clip-path 0.3s ease-in;
+}
+.g a:hover img,
+.g a img:hover {
+  -webkit-clip-path: polygon(50% 0, 0 0, 0 100%, 50% 100%, 50% 0, 100% 0, 100% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 0 0, 0 100%, 50% 100%, 50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+article {
+  transition: filter 0.5s;
+}
+.g:hover + article {
+  filter: blur(3px);
+}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -1160,12 +1252,12 @@ section {
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: rgb(223, 81, 81);
   margin: 0;
 }
 
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #d5e9f2;
+  color: #f53809;
   font-size: 26px;
 }
 
@@ -1186,7 +1278,7 @@ section {
   font-style: italic;
   margin: 0 15px 15px 15px;
   padding: 20px;
-  background: #fff;
+  background: rgb(236, 6, 6);
   position: relative;
   margin-bottom: 35px;
   border-radius: 6px;
@@ -1197,7 +1289,7 @@ section {
   content: "";
   width: 0;
   height: 0;
-  border-top: 20px solid #fff;
+  border-top: 20px solid rgb(3, 3, 3);
   border-right: 20px solid transparent;
   border-left: 20px solid transparent;
   position: absolute;
@@ -1213,13 +1305,13 @@ section {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: rgb(46, 23, 179);
   opacity: 1;
-  border: 1px solid #67b0d1;
+  border: 1px solid #040b0e;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #67b0d1;
+  background-color: #010c11;
 }
 
 /*--------------------------------------------------------------
@@ -1227,6 +1319,7 @@ section {
 --------------------------------------------------------------*/
 .team{
   background: linear-gradient(white, rgb(61, 172, 206));
+  margin-top: 3rem;
 }
 .team .member {
   text-align: center;
