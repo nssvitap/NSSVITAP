@@ -13,6 +13,14 @@ body {
   height: 120px;
   margin: -76px 0 0 -76px;
 }
+.logo-loader{
+  animation: fade-out 5s ease-in infinite;
+}
+@keyframes fade-out {
+  0% {display: none;opacity: 0;}
+  50% {display: block; background-color: rgb(44, 223, 230); border-radius: 50%;}
+  70% {display: block; opacity: 100;}
+}
 .progress-bar {
 	position: relative;
 	width: 500px;
@@ -45,7 +53,8 @@ body {
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s
+  animation-duration: 1s;
+  animation-delay: 5s;
 }
 
 @-webkit-keyframes animatebottom {
@@ -804,7 +813,6 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-
 .ts {
   width:100%; height:100%;
   position:relative;
@@ -1147,7 +1155,7 @@ transitions
 }
 article {
   position: absolute;
-  left: 38%;
+  left: 26%;
   width: 50vw;
   color: #333;
 }
