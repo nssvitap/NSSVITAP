@@ -1759,7 +1759,7 @@ text-decoration: none;
      background: #fff;
      padding: 30px;
      border-radius: 50%;
-     box-shadow: 0 0 22px #3336;
+     box-shadow: 0 0 22px rgba(9, 205, 219, 0.4);
      transition: .6s;
      margin: 0 25px;
    }
